@@ -1,6 +1,6 @@
 export class TokenService {
-  save(token: string) {
-    console.log(token);
+  save(_token: string) {
+    // Token persistence is not implemented yet. Never log credentials.
   }
 
   get() {

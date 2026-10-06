@@ -39,3 +39,10 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Cloudflare and private environment files
+.wrangler/
+.dev.vars*
+.env*
+!.dev.vars.example
+!.env.example
