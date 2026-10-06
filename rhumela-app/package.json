@@ -24,13 +24,24 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "wrangler": "4.100.0"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "prebuild:web": "node scripts/check-api-url.mjs",
+    "build:web": "expo export -p web",
+    "preview": "npm run build:web && wrangler dev",
+    "deploy": "npm run build:web && wrangler deploy",
+    "deploy:check": "npm run build:web && wrangler deploy --dry-run"
   },
+  "engines": {
+    "node": "24.19.0",
+    "npm": "11.9.0"
+  },
+  "packageManager": "npm@11.9.0",
   "private": true
 }
